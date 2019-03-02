@@ -1,0 +1,6 @@
+public class july2th{
+  public static void mian(String[] args){
+   GUIgroup gg = new GUIgroup();
+    
+  }
+}
