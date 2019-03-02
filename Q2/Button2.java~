@@ -1,0 +1,42 @@
+public class Button2 extends GUIelement{
+  private Handler han;
+  public Button2(double xc, double yc, double hw, double hh, String title, Hnadler han){
+    super(xc,yc,hw,hh,title,false);
+    this.han = han;
+  }
+  public void draw(){
+    StdDraw.setPenColor();
+    StdDraw.setPenRadius();
+    StdDraw.rectangle(xCentre,yCentre,halfWidth,halfHeight);
+    if(highlighted){
+     StdDraw.setPenColor(StdDraw.LIGHT_GRAY); 
+    }
+    else{
+      StdDraw.setPenColor(StdDraw.WHITE);
+    }
+    
+    double penRadius = StdDraw.getPenRadius();
+    
+    StdDraw.filledRectangle(xCentre,yCentre,halfWidth,halfHeight);
+    StdDraw.setPenColor(StdDraw.BLACK);
+    StdDraw.text(xCentre, yCentre,text);
+  }
+  public boolean handleClick(double x, double y){
+    boolean result = false;
+    if(super.handleClick(x,y)){
+     highlighted = true;
+     draw();
+     result = true;
+     if(StdDraw.mousePressed()){
+       Utilities.waitMouseUp();
+     }
+    }
+     else{
+       return false;
+     }
+    highlighted = false;
+    draw();  
+    return result;  
+  }
+  
+}

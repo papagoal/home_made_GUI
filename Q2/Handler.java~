@@ -1,0 +1,19 @@
+public class Handler{
+  public void doIt(){   
+  } 
+}
+class HandleRed extends Handler{
+  public void doIt(){
+    TestA3Q2.drawRed();
+  }
+}
+class HandleGreen extends Handler{  
+  public void doIt(){
+    TestA3Q2.drawGreen();
+  }
+}
+class HandleBlue extends Handler{
+  public void doIt(){
+      TestA3Q2.drawBlue();
+  }
+}
